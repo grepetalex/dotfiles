@@ -115,3 +115,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# try to reload private ssh keys into the keychain
+# For Loading the SSH key
+# /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
+# source $HOME/.keychain/$HOSTNAME-sh
+eval `keychain --eval --agents ssh id_rsa`
+
